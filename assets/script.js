@@ -132,6 +132,7 @@ function saveHighScore() {
 
     // Hide the high score input section
     initialsInput.style.display = "none";
+    var submitScoreButton = document.querySelector("#submit-score");
     submitScoreButton.style.display = "none";
   }
 }
@@ -150,5 +151,5 @@ function displayHighScores() {
 }
 
 // Event listener for the start button
-
 startButton.addEventListener("click", startQuiz);
+submitScoreButton.addEventListener("click", saveHighScore);
