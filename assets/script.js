@@ -1,3 +1,4 @@
+//Quiz questions and answers
 var questions = [
   {
     question: "Which HTML tag is used to create a hyperlink?",
@@ -24,37 +25,34 @@ var score = 0;
 var timeLeft = 60;
 var timerInterval;
 
-// DOM elements
-const questionElement = document.getElementById("question");
-const optionsContainer = document.getElementById("options");
-const feedbackElement = document.getElementById("feedback");
-const timeRemainingElement = document.getElementById("time-remaining");
-const startButton = document.getElementById("start-btn");
-const initialsInput = document.getElementById("initials");
-const submitScoreButton = document.getElementById("submit-score");
-const highScoresElement = document.getElementById("high-scores");
-
 // Function to start the quiz
 function startQuiz() {
+  //Hide the start button
   var startButton = document.querySelector("#start-btn");
   startButton.style.display = "none";
+  //Reset variable and UI
   currentQuestionIndex = 0;
   score = 0;
   timeLeft = 60;
   displayQuestion();
   timerInterval = setInterval(updateTimer, 1000);
 
-  // Start the timer
+  //Function to update the timer
   function updateTimer() {
     var timeRemainingElement = document.querySelector("#time-remaining");
     timeRemainingElement.textContent = timeLeft;
+
+    if (timeLeft <= 0 || currentQuestionIndex === questions.length) {
+      clearInterval(timerInterval);
+      endQuiz();
+    } else {
+      timeLeft--;
+    }
   }
 
-  if (timeLeft <= 0 || currentQuestionIndex === questions.length) {
-    endQuiz();
-  } else {
-    timeLeft--;
-  }
+  //Event listener for the submit button
+  var submitScoreButton = document.querySelector("#submit-score");
+  submitScoreButton.addEventListener("click", saveHighScore);
 }
 
 // Function to display a question
@@ -63,6 +61,7 @@ function displayQuestion() {
   var questionElement = document.querySelector("#question");
   var optionsContainer = document.querySelector("#options");
 
+  //Display the current question and answer options
   questionElement.textContent = currentQuestion.question;
   optionsContainer.innerHTML = "";
 
@@ -82,13 +81,16 @@ function checkAnswer(selectedOption) {
   var feedbackElement = document.querySelector("#feedback");
   var currentQuestion = questions[currentQuestionIndex];
   if (selectedOption === currentQuestion.answer) {
+    // Correct Answer
     score++;
     feedbackElement.textContent = "Correct!";
   } else {
-    timeLeft -= 10;
+    // Wrong answer
+    timeLeft -= 10; //Penalty for wrong answer
     feedbackElement.textContent = "Wrong!";
   }
 
+  //Move to next question
   currentQuestionIndex++;
 
   if (currentQuestionIndex < questions.length) {
@@ -100,12 +102,12 @@ function checkAnswer(selectedOption) {
 
 // Function to end the quiz
 function endQuiz() {
-  clearInterval(timerInterval);
   var questionElement = document.querySelector("#question");
   var optionsContainer = document.querySelector("#options");
   var feedbackElement = document.querySelector("#feedback");
   var startButton = document.querySelector("#start-btn");
 
+  //Display quiz summary
   questionElement.textContent = "Quiz Over!";
   optionsContainer.innerHTML = "";
   feedbackElement.textContent = "Your final score is: " + score;
@@ -115,7 +117,6 @@ function endQuiz() {
   var submitScoreButton = document.querySelector("#submit-score");
   initialsInput.style.display = "inline";
   submitScoreButton.style.display = "inline";
-  submitScoreButton.addEventListener("click", saveHighScore);
 }
 
 // Function to save the high score
@@ -151,5 +152,5 @@ function displayHighScores() {
 }
 
 // Event listener for the start button
-startButton.addEventListener("click", startQuiz);
-submitScoreButton.addEventListener("click", saveHighScore);
+var startButton = addEventListener("click", startQuiz);
+var submitScoreButton = addEventListener("click", saveHighScore);
