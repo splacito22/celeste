@@ -3,34 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link the external CSS stylesheet -->
     <link rel="stylesheet" href="./assets/style.css" />
-
+    <!-- Title of the page -->
     <title>Coding Quiz</title>
   </head>
   <body>
+    <!-- Header -->
     <header>
+      <!-- Main heading -->
       <h1>Coding Quiz</h1>
     </header>
-
+    <!-- Main content -->
     <main>
+      <!-- Quiz container content -->
       <div id="quiz-container">
+        <!-- Placeholder for displaying questions -->
         <div id="question"></div>
+        <!-- Container for displaying answer questions -->
         <div id="options"></div>
       </div>
+      <!-- Placeholder for displaying feedback on user answers -->
       <div id="feedback"></div>
+      <!-- Timer display -->
       <div id="timer">Time: <span id="time-remaining">60</span> seconds</div>
+      <!-- Start button to begin the quiz -->
       <button id="start-btn">Start Quiz</button>
     </main>
-
+    <!-- Footer -->
     <footer>
+      <!-- Container for high score input and submit button -->
       <div id="high-score-container">
+        <!-- Label for the initials input -->
         <label for="initials">Enter your initials:</label>
+        <!-- Text input for entering user initials with a maximum length of 3 characters -->
         <input type="text" id="initials" maxlength="3" />
+        <!-- Button to submit the user's high score -->
         <button id="submit-score">Submit Score</button>
       </div>
+      <!-- Container for displaying high scores -->
       <div id="high-scores"></div>
     </footer>
-
+    <!-- Script section to link the JavaScript file -->
     <script src="assets/script.js"></script>
   </body>
 </html>
