@@ -9,6 +9,7 @@ li {
   padding: 0;
 }
 
+/* Set default font and line height for the body */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -16,7 +17,7 @@ body {
 
 /* Header styles */
 header {
-  background-color: #333;
+  background-color: black;
   color: #fff;
   text-align: center;
   padding: 1rem 0;
@@ -29,17 +30,20 @@ main {
   padding: 2rem;
 }
 
+/* Quiz container styles */
 #quiz-container {
   border: 2px solid #333;
   padding: 2rem;
   margin-bottom: 1rem;
 }
 
+/* Question styles */
 #question {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
+/* Answer options styles */
 #options {
   display: flex;
   flex-direction: column;
@@ -59,22 +63,25 @@ main {
   background-color: #ddd;
 }
 
+/* Feedback styles */
 #feedback {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
+/* Timer styles */
 #timer {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
+/* Start button styles */
 #start-btn {
   display: block;
   margin: 1rem auto;
   padding: 1rem 2rem;
   font-size: 1rem;
-  background-color: #007bff;
+  background-color: black;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -91,21 +98,25 @@ footer {
   padding: 1rem;
 }
 
+/* High Score container styles */
 #high-score-container {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
 
+/* Label styles */
 label {
   margin-right: 0.5rem;
 }
 
+/* Initials input styles */
 #initials {
   padding: 0.5rem;
   font-size: 1rem;
 }
 
+/* Submit score button styles */
 #submit-score {
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -120,6 +131,7 @@ label {
   background-color: #218838;
 }
 
+/* High score styles */
 #high-scores {
   font-size: 1.2rem;
 }
