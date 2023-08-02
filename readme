@@ -1,16 +1,28 @@
 # Celeste #4 Wep API's: Code Quiz
 
-​
-
 ## Description
 
+This assignment is a web-based coding quiz designed to test users' knowledge of HTML, CSS, and JavaScript. Users are presented with a series of multiple-choice questions and must select the correct answers within a given time limit. The quiz displays feedback on each answer, deducts points for incorrect responses, and keeps track of the user's final score. It includes features such as a timer, high score submission, and display of previous high scores. The quiz provides a way for users to challenge their web development knowledge while learning from their mistakes. The project is implemented using HTML, CSS, and JavaScript and can be easily extended or modified for further customization.
 ​
 
 ## Tasks
 
+HTML Markup: Set up the basic HTML structure with the required elements such as header, main content, feedback, timer, start button, and high score section.
+
+CSS Styling: Apply CSS styles to create an aesthetically pleasing and responsive layout. Design the header, main content, options, buttons, and footer sections for a cohesive user interface.
+
+JavaScript Quiz Logic: Implement JavaScript functions to handle the quiz functionality. Create an array of quiz questions and answers, display questions one by one, and check user-selected answers for correctness.
+
+Timer Functionality: Develop the timer functionality to count down from 60 seconds while the quiz is ongoing. End the quiz when the time runs out and display the user's final score.
+
+High Score Management: Implement the ability for users to submit their initials and save their high scores. Store the high scores in local storage and display them on the screen.
+
+Quiz Interaction: Enable user interaction by allowing them to click on answer options, providing feedback for each question, and displaying the quiz summary at the end.
 ​
 
 ## Usage
+
+![Alt text](image.png)
 
 ## Links
 
@@ -28,6 +40,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document
 https://www.w3schools.com/js/js_operators.asp
 https://www.w3schools.com/js/js_json.asp
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+https://www.w3schools.com/css/css_examples.asp
 
 ## License
 
@@ -64,4 +77,4 @@ Study Group/Zoom Breakout Rooms (w/Marc H, Evan Griggs, Jaime) - for their colla
 
 AskBCS for their assistance, prompt responses, and helpful resources.
 
-Tutoring sessions- Patrick Lake
+Tutoring sessions- Patrick Lake for his patience and knowledge.
