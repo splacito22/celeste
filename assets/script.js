@@ -25,6 +25,18 @@ var score = 0;
 var timeLeft = 60;
 var timerInterval;
 
+//Function to update the timer
+function updateTimer() {
+  var timeRemainingElement = document.querySelector("#time-remaining");
+  timeRemainingElement.textContent = timeLeft;
+
+  if (timeLeft <= 0 || currentQuestionIndex === questions.length) {
+    clearInterval(timerInterval);
+    endQuiz();
+  } else {
+    timeLeft--;
+  }
+}
 // Function to start the quiz
 function startQuiz() {
   //Hide the start button
@@ -36,23 +48,6 @@ function startQuiz() {
   timeLeft = 60;
   displayQuestion();
   timerInterval = setInterval(updateTimer, 1000);
-
-  //Function to update the timer
-  function updateTimer() {
-    var timeRemainingElement = document.querySelector("#time-remaining");
-    timeRemainingElement.textContent = timeLeft;
-
-    if (timeLeft <= 0 || currentQuestionIndex === questions.length) {
-      clearInterval(timerInterval);
-      endQuiz();
-    } else {
-      timeLeft--;
-    }
-  }
-
-  //Event listener for the submit button
-  var submitScoreButton = document.querySelector("#submit-score");
-  submitScoreButton.addEventListener("click", saveHighScore);
 }
 
 // Function to display a question
@@ -152,5 +147,8 @@ function displayHighScores() {
 }
 
 // Event listener for the start button
-var startButton = addEventListener("click", startQuiz);
-var submitScoreButton = addEventListener("click", saveHighScore);
+var startButton = document.querySelector("#start-btn");
+startButton.addEventListener("click", startQuiz);
+
+var submitScoreButton = document.querySelector("#submit-score");
+submitScoreButton.addEventListener("click", saveHighScore);
